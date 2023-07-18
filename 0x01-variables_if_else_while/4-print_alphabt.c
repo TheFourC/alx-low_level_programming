@@ -7,18 +7,13 @@
  */
 int main(void)
 {
-	int d = 97;
+        int d = 97;
 
-	while (d < 123)
-	{
-		if (d == 101 || d == 113)
-		{
-			d++;
-			continue;
-		}
-		putchar(d);
-		d++;
-	}
-	putchar('\n');
-	return (0);
+        while (d < 123)
+        {
+                putchar(d);
+                d++;
+        }
+        putchar('\n');
+        return (0);
 }
