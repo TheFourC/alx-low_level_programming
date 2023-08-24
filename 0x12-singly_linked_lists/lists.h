@@ -1,26 +1,26 @@
-#ifndef SIMPLE_LIST_H
-#define SIMPLE_LIST_H
+#ifndef LISTS_H
+#define LISTS_H
 
 /**
- * struct item_s - Defines a single node in a singly linked list.
- * @data: A dynamically allocated string.
- * @data_len: Holds the length of the string.
- * @next_item: Points to the subsequent node.
+ * struct list_s - Defines a node for a single-direction linked list
+ * @str: dynamic string reference
+ * @len: character count in the string
+ * @next: pointer leading to the subsequent node
  *
- * Description: Structure defining a node for a project at Holberton Academy.
+ * Description: Data structure for a single-linked list
+ * suitable for multiple programming challenges
  */
-typedef struct item_s
+typedef struct list_s
 {
-    char *data;
-    unsigned int data_len;
-    struct item_s *next_item;
-} item_t;
+	char *str;
+	unsigned int len;
+	struct list_s *next;
+} list_t;
 
-size_t show_list(const item_t *start);
-size_t measure_list(const item_t *start);
-item_t *prepend_node(item_t **first, const char *data);
-item_t *append_node(item_t **first, const char *data);
-void release_list(item_t *first);
+size_t print_list(const list_t *h);
+size_t list_len(const list_t *h);
+list_t *add_node(list_t **head, const char *str);
+list_t *add_node_end(list_t **head, const char *str);
+void free_list(list_t *head);
 
 #endif
-
