@@ -13,7 +13,7 @@ char *strdup(const char *s);  /* Explicit declaration of strdup */
 list_t *add_node_end(list_t **head, const char *str)
 {
     list_t *new_node;
-    list_t *current = *head;
+    list_t *curr = *head;
     unsigned int length = 0;
 
     /* Determine the size of the provided string */
@@ -48,13 +48,13 @@ list_t *add_node_end(list_t **head, const char *str)
     }
 
     /* Navigate to the end of the list */
-    while (current->next)
+    while (curr->next)
     {
-        current = current->next;
+        curr = curr->next;
     }
 
     /* Append new node to the list */
-    current->next = new_node;
+    curr->next = new_node;
 
     return new_node;
 }
